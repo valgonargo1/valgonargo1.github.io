@@ -5,23 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Today's Date</title>
-    <textarea id="myText">
-    Test Test :)
-</textarea>
-<button onclick="sendMail(); return false">Send</button>
-    <script>
-function sendMail() {
-    var link = "mailto:valgonargo@gmail.com"
-             + "?cc=valgonargo@gmail.com"
-             + "&subject=" + escape("This is my subject")
-             + "&body=" + escape(document.getElementById('myText').value)
-    ;
-
-    window.location.href = link;
-}
-    </script>
+  
+    
 </head>
 
 <body>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    $.ajax({
+  type: “POST”,
+  url: “https://mandrillapp.com/api/1.0/messages/send.json”,
+  data: {
+    ‘key’: ‘9094483ba932a2ae990b02cf21e5bc19-us17’,
+    ‘message’: {
+      ‘from_email’: ‘valgonargo@gmail.com’,
+      ‘to’: [
+          {
+            ‘email’: ‘valgonargo@gmail.com’,
+            ‘name’: ‘Test’,
+            ‘type’: ‘to’
+          },
+          {
+            ‘email’: ‘valgonargo@gmail.com’,
+            ‘name’: ‘test 2’,
+            ‘type’: ‘to’
+          }
+        ],
+      ‘autotext’: ‘true’,
+      ‘subject’: ‘Test !’,
+      ‘html’: ‘Test Letter’
+    }
+  }
+ }).done(function(response) {
+   console.log(response); // if you're into that sorta thing
+ });
+    
+    $('POST').click(function() {
+  $.ajax({
+    // ...
+  });
+});
 
 </body>
+    
+</html>
