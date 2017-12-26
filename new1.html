@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Today's Date</title>
+    <textarea id="myText">
+    Test Test :)
+</textarea>
+<button onclick="sendMail(); return false">Send</button>
     <script>
 function sendMail() {
     var link = "mailto:valgonargo@gmail.com"
              + "?cc=valgonargo@gmail.com"
              + "&subject=" + escape("This is my subject")
-             + "&body=" + escape(document.getElementById('Test Test :)').value)
+             + "&body=" + escape(document.getElementById('myText').value)
     ;
 
     window.location.href = link;
