@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        console.log(xhttp.responseText);
+    }
+}
+xhttp.open('GET', 'https://mandrillapp.com/api/1.0/messages/send.json?message[from_email]=valgonargo@gmail.com&message[to][0][email]=valgonargo@gmail.com&message[subject]=test&message[html]=xxxxxx&key=9094483ba932a2ae990b02cf21e5bc19-us17', true);
+xhttp.send();
+        
+        </script>
+    	<title></title>
+    </head>
+    <body>
+    </body>
+</html>
