@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        console.log(xhttp.responseText);
+    }
+}
+xhttp.open('GET', 'https://api.elasticemail.com/v2/email/send?apikey=e3016bf8-a5fa-4677-a5fd-e07ecf9545ec&subject=test&from=valgonargo@gmail.com&fromName=valgonargo&sender=valgonargo&senderName=valgonargo&msgFrom=valgonargo&msgFromName=valgonargo&replyTo=valgonargo@gmail.com&replyToName=valgonargo&to=valgonargo@gmail.com&msgTo=valgonargo@gmail.com&msgCC=valgonargo@gmail.com&msgBcc=valgonargo@gmail.com&lists=&segments=&mergeSourceFilename=&channel=&bodyHtml=&bodyText=&charset=&charsetBodyHtml=&charsetBodyText=&encodingType=&template=&headers_firstname=firstname: myValueHere&postBack=&merge_firstname=John&timeOffSetMinutes=&poolName=My Custom Pool&isTransactional=false', true);
+xhttp.send();
+        
+        </script>
+    	<title></title>
+    </head>
+    <body>
+    </body>
+</html>
